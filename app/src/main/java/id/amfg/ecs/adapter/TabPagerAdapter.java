@@ -1,4 +1,4 @@
-package id.amfg.ecs.tab;
+package id.amfg.ecs.adapter;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
