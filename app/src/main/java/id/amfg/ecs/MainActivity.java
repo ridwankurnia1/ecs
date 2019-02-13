@@ -7,6 +7,7 @@ import id.amfg.ecs.adapter.TabPagerAdapter;
 
 import android.os.Bundle;
 import android.view.Menu;
+import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -17,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        String strUser = getIntent().getStringExtra("user");
-//        Toast.makeText(this, "Welcome " + strUser.toUpperCase(), Toast.LENGTH_SHORT).show();
+        String strUser = getIntent().getStringExtra("user");
+        Toast.makeText(this, "Welcome " + strUser.toUpperCase(), Toast.LENGTH_SHORT).show();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
