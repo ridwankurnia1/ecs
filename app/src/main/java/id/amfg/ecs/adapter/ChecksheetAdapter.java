@@ -1,10 +1,12 @@
 package id.amfg.ecs.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,16 +18,18 @@ import java.util.ArrayList;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import de.hdodenhof.circleimageview.CircleImageView;
+import id.amfg.ecs.BracketActivity;
 import id.amfg.ecs.R;
 
 public class ChecksheetAdapter extends RecyclerView.Adapter<ChecksheetAdapter.ViewHolder> {
     private static final String TAG = "ChecksheetAdapter";
 
-    private ArrayList<String> mImage = new ArrayList<>();
+    //private ArrayList<String> mImage = new ArrayList<>();
+    private int[] mImage = new int[2];
     private ArrayList<String> mImageName = new ArrayList<>();
     private Context mContext;
 
-    public ChecksheetAdapter(Context Context, ArrayList<String> Image, ArrayList<String> ImageName) {
+    public ChecksheetAdapter(Context Context, int[] Image, ArrayList<String> ImageName) {
         this.mImage = Image;
         this.mImageName = ImageName;
         this.mContext = Context;
@@ -41,20 +45,34 @@ public class ChecksheetAdapter extends RecyclerView.Adapter<ChecksheetAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
-        Log.d(TAG,"onBindViewHolder:called");
-        Glide.with(mContext)
-                .asBitmap()
-                .load(mImage.get(position))
-                .into(holder.image);
+        Log.d(TAG, "onBindViewHolder:called");
+        if (position <= 1) {
+            Glide.with(mContext)
+                    .asBitmap()
+                    //.load(mImage.get(position))
+                    .load(mImage[position])
+                    .into(holder.image);
 
-        holder.imageName.setText(mImageName.get(position));
-        holder.parentLayout.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void  onClick(View view) {
-                Toast.makeText(mContext,mImageName.get(position),Toast.LENGTH_SHORT).show();
-            }
-        });
+            holder.imageName.setText(mImageName.get(position));
+            holder.parentLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = null;
+                    switch (position) {
+                        case 0:
+                            intent = new Intent(mContext, BracketActivity.class);
+                            break;
+                        case 1:
+                            break;
+                    }
+                    if (intent != null)
+                        mContext.startActivity(intent);
+                }
+                //Toast.makeText(mContext,mImageName.get(position),Toast.LENGTH_SHORT).show();
+            });
+        }
     }
+
 
     @Override
     public int getItemCount() {
@@ -62,7 +80,8 @@ public class ChecksheetAdapter extends RecyclerView.Adapter<ChecksheetAdapter.Vi
     }
 
     public class  ViewHolder extends RecyclerView.ViewHolder{
-        CircleImageView image;
+        //CircleImageView image;
+        ImageView image;
         TextView imageName;
         RelativeLayout parentLayout;
 

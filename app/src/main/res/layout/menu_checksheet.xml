@@ -2,15 +2,23 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="15dp"
     android:id="@+id/parent_layout">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:id="@+id/img"
-        android:src="@mipmap/ic_launcher"
+        app:srcCompat="@drawable/ic_assignment_green_24dp"
         />
+
+    <!--<de.hdodenhof.circleimageview.CircleImageView-->
+        <!--android:layout_width="80dp"-->
+        <!--android:layout_height="80dp"-->
+        <!--android:id="@+id/img"-->
+        <!--android:src="@drawable/ic_assignment_green_24dp"-->
+        <!--/>-->
 
     <TextView
         android:layout_width="wrap_content"
@@ -18,8 +26,8 @@
         android:id="@+id/img_name"
         android:layout_toRightOf="@id/img"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="30dp"
-        android:textSize="17dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="20dp"
         android:text="Canada"
         />
 
