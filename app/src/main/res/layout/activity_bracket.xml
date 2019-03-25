@@ -1,10 +1,328 @@
 <?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BracketActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        app:titleTextColor="@color/colorWhite">
+    </androidx.appcompat.widget.Toolbar>
+    <RelativeLayout
+        android:layout_below="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rl1"
+        android:layout_margin="20dp"
+        android:gravity="center">
+
+        <EditText
+            android:editable="false"
+            android:id="@+id/txtTanggal"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="Tanggal"/>
+
+        <EditText
+            android:id="@+id/txtGroup"
+            android:layout_below="@+id/txtTanggal"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="Group"/>
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtShift"
+            android:hint="Shift"
+            android:layout_below="@+id/txtGroup"
+            />
+        <EditText
+            android:editable="false"
+            android:layout_toRightOf="@+id/txtTanggal"
+            android:layout_width="200dp"
+            android:hint="Jam Proses"
+            android:id="@+id/txtJamProses"
+            android:layout_marginLeft="50dp"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:inputType="number"
+            android:layout_below="@+id/txtJamProses"
+            android:layout_toRightOf="@+id/txtGroup"
+            android:layout_width="200dp"
+            android:hint="No.Urut Bracket"
+            android:layout_marginLeft="50dp"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_below="@+id/rl1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1. Cleaning Kaca dengan AIR RO"
+                    android:textSize="20dp"
+                    android:layout_column="1"/>
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:id="@+id/chk1"
+                    />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2. Degreasing dengan IPA + Check hasilnya"
+                    android:textSize="20dp"
+                    android:layout_column="1"/>
+
+                <CheckBox
+                    android:id="@+id/chk2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3. Pasang Double Tape di bracket"
+                    android:textSize="20dp"
+                    android:layout_column="1"/>
+
+                <CheckBox
+                    android:id="@+id/chk3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4. Cek hasil cleaning camera bracket"
+                    android:textSize="20dp"
+                    android:layout_column="1"/>
+
+                <CheckBox
+                    android:id="@+id/chk4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2" />
+            </TableRow>
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5. Cek kondisi bracket yang sudah dicleaning"
+                    android:textSize="20dp"
+                    android:layout_column="1"/>
+
+                <CheckBox
+                    android:id="@+id/chk5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2" />
+            </TableRow>
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6. Bracket primaring dengan Primer M-300"
+                    android:textSize="20dp"
+                    android:layout_column="1"/>
+
+                <CheckBox
+                    android:id="@+id/chk6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2" />
+            </TableRow>
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <EditText
+                    android:editable="false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Jam Start"
+                    android:id="@+id/txtJamStart"
+                    android:layout_column="1"/>
+            </TableRow>
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="7. Cek hasil primering + Excess primer"
+                    android:textSize="20dp"
+                    android:layout_column="1"/>
+
+                <CheckBox
+                    android:id="@+id/chk7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2" />
+            </TableRow>
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8. Buka layer double tape + Timbang bracket"
+                    android:textSize="20dp"
+                    android:layout_column="1"/>
+
+                <CheckBox
+                    android:id="@+id/chk8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2" />
+            </TableRow>
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9. Isi sealant WS-222T di bracket"
+                    android:textSize="20dp"
+                    android:layout_column="1"/>
+
+                <CheckBox
+                    android:id="@+id/chk9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2" />
+            </TableRow>
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <EditText
+                    android:editable="false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Jam Start"
+                    android:id="@+id/txtJamStartChk9"
+                    android:layout_column="1"/>
+            </TableRow>
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10. Cek berat sealant di bracket"
+                    android:textSize="20dp"
+                    android:layout_column="1"/>
+
+                <CheckBox
+                    android:id="@+id/chk10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2" />
+            </TableRow>
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <EditText
+                    android:inputType="numberDecimal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_hasil"
+                    android:id="@+id/txtHasilSealant"
+                    android:layout_column="1"/>
+            </TableRow>
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="11. Cek hasil isi sealant + ambil gambar"
+                    android:textSize="20dp"
+                    android:layout_column="1"/>
+
+                <CheckBox
+                    android:id="@+id/chk11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"/>
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
+</RelativeLayout>
+
+<!--
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".BracketActivity">
+
+
 
     <CheckBox
         android:id="@+id/cb1"
@@ -16,6 +334,8 @@
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+        ini edit pak ridwan
 
     <CheckBox
         android:id="@+id/cb2"
@@ -200,4 +520,4 @@
         app:layout_constraintTop_toTopOf="@+id/cb8"
         app:layout_constraintVertical_bias="1.0" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>-->

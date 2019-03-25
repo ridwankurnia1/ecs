@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
@@ -17,7 +16,6 @@ import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import de.hdodenhof.circleimageview.CircleImageView;
 import id.amfg.ecs.BracketActivity;
 import id.amfg.ecs.R;
 
@@ -89,7 +87,7 @@ public class ChecksheetAdapter extends RecyclerView.Adapter<ChecksheetAdapter.Vi
             super(itemView);
             image = itemView.findViewById(R.id.img);
             imageName = itemView.findViewById(R.id.img_name);
-            parentLayout = itemView.findViewById(R.id.parent_layout);
+            parentLayout = itemView.findViewById(R.id.menu_checksheet);
         }
     }
 
